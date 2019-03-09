@@ -1,0 +1,47 @@
+\documentclass{ctuthesis}
+
+\ctusetup{
+	xdoctype = M,
+	xfaculty = F3,
+	mainlanguage = english,
+	titlelanguage = english,
+	title-english = {Deep neural network for city mapping using Google Street View data},
+%	title-czech = {Sázení uranu},
+	department-english = {Department of Cybernetics},
+	author = {Varun Burde},
+	supervisor = {Ing. Michal Reinštein, Ph.D.},
+	supervisor-address = { Karlovo nam. 13, 121 35 Prague 2, Czech Republic, room E225b},
+	month = 5,
+	year = 2019,
+}
+
+\ctuprocess
+
+\begin{abstract-english}
+With the advancement computation power and large datasets finally made a huge improvement of Deep neural network leading many widespread applications. One of such application is solving computer vision problems like classification and segmentation. Also Competition like ImageNet[1] Large Scale Visual Recognition Challenge, took the solution to next level, in some cases classification is better than Human.This report describes the evaluation of pre-trained deep neural network on Google StreetView Images[2]. Pretrained model used are Mask RCNN[3], Xception[4] , VGG16[5], VGG19[5], Inception v3[6], Inception resnetv2[7], Resnet50[8], MobileNet[9], MobileNetv2[10], DenseNet[11], NASNet[12]. Implementation is done in Python[13] using Keras[14] and TesnsorFlow-GPU[15] framework. User interface for the application execution, processing of the input images and visualization of the results is realized using Google Colab[16] with repository in GIT[17].A pipeline was created for the task, user provide the parameters like coordinates, heading, field of view for the Google StreetView API [2]. Python[13] script downloads the available images to that location then images were preprocessed to fit into classifier. Classification is done on the Images depending on the architecture of the Neural Network.The classification results were evaluated based experiment taking downloading images from three random location inside Prague with specific parameters like resolution, field of view etc. The recognition of misclassification of object is evaluated by human sense and presented in below evaluation section.Since the different types of network have different architecture and detection algorithm, it wasn’t possible to have direct comparison between them , so detection is done with two separate section one with Mask R-CNN[3] and other with all pretrained model available in Keras[14], but with same images from Google StreetView[2].
+
+\end{abstract-english}
+
+\begin{abstract-czech}
+Rozvíjíme \ldots
+\end{abstract-czech}
+
+\begin{document}
+	
+\maketitle
+
+\chapter{Introduction}
+
+Foo bar
+
+\chapter{Conclusion}
+
+Lorep ipsum \cite{doe}
+
+\begin{thebibliography}{1}
+	
+\bibitem{doe} J. Doe. \emph{Book on foobar.} Publisher X,2300.
+
+\end{thebibliography}
+
+\end{document}
