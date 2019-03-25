@@ -1,6 +1,46 @@
-import cv2
-import numpy as np
+# Copyright UCL Business plc 2017. Patent Pending. All rights reserved.
+#
+# The MonoDepth Software is licensed under the terms of the UCLB ACP-A licence
+# which allows for non-commercial use only, the full terms of which are made
+# available in the LICENSE file.
+#
+# For any other use of the software not covered by the UCLB ACP-A Licence,
+# please contact info@uclb.com
 
+from __future__ import absolute_import, division, print_function
+import cv2
+# only keep warnings and errors
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='0'
+
+import numpy as np
+import argparse
+import re
+import time
+import tensorflow as tf
+import tensorflow.contrib.slim as slim
+import scipy.misc
+import matplotlib.pyplot as plt
+import model as modellib
+from monodepth_model import *
+from monodepth_dataloader import *
+from average_gradients import *
+
+CHECKPOINT_PATH = '/media/varun/DATA/Projects/DNN for city mapping/workspace/monodepth/models/model_cityscapes/model_cityscapes.data-00000-of-00001'
+parser = argparse.ArgumentParser(description='Monodepth TensorFlow implementation.')
+
+parser.add_argument('--encoder',          type=str,   help='type of encoder, vgg or resnet50', default='vgg')
+parser.add_argument('--checkpoint_path',  type=str,   help='path to a specific checkpoint to load', default=CHECKPOINT_PATH)
+parser.add_argument('--input_height',     type=int,   help='input height', default=256)
+parser.add_argument('--input_width',      type=int,   help='input width', default=512)
+
+args = parser.parse_args()
+
+capture = cv2.VideoCapture(0)
+
+# these 2 lines can be removed if you dont have a 1080p camera.
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 512)
+capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 256)
 
 def random_colors(N):
     np.random.seed(1)
@@ -49,16 +89,23 @@ def display_instances(image, boxes, masks, ids, names, scores):
 
     return image
 
+def post_process_disparity(disp):
+    _, h, w = disp.shape
+    l_disp = disp[0,:,:]
+    r_disp = np.fliplr(disp[1,:,:])
+    m_disp = 0.5 * (l_disp + r_disp)
+    l, _ = np.meshgrid(np.linspace(0, 1, w), np.linspace(0, 1, h))
+    l_mask = 1.0 - np.clip(20 * (l - 0.05), 0, 1)
+    r_mask = np.fliplr(l_mask)
+    return r_mask * l_disp + l_mask * r_disp + (1.0 - l_mask - r_mask) * m_disp
 
-if __name__ == '__main__':
-    """
-        test everything
-    """
+def test_simple(params):
+    """Test function."""
     import os
     import sys
     import coco
     import utils
-    import model as modellib
+
     from mrcnn.config import Config
 
     ROOT_DIR = os.getcwd()
@@ -66,7 +113,6 @@ if __name__ == '__main__':
     COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
     if not os.path.exists(COCO_MODEL_PATH):
         utils.download_trained_weights(COCO_MODEL_PATH)
-
 
     class CocoConfig(Config):
         """Configuration for training on MS COCO.
@@ -87,7 +133,6 @@ if __name__ == '__main__':
         # NUM_CLASSES = 37  # COCO has 80 classes
         NUM_CLASSES = 81
 
-
     class InferenceConfig(CocoConfig):
         # Set batch size to 1 since we'll be running inference on
         # one image at a time. Batch size = GPU_COUNT * IMAGES_PER_GPU
@@ -103,14 +148,15 @@ if __name__ == '__main__':
         IMAGE_MAX_DIM = 512
         # DETECTION_MAX_INSTANCES = 50 #a little faster but some instances not recognized
 
-
     config = InferenceConfig()
     config.display()
 
-    model = modellib.MaskRCNN(
+    left  = tf.placeholder(tf.float32, [2, args.input_height, args.input_width, 3])
+    modeld = MonodepthModel(params, "test", left, None)
+    modelrcnn = modellib.MaskRCNN(
         mode="inference", model_dir=MODEL_DIR, config=config
     )
-    model.load_weights(COCO_MODEL_PATH, by_name=True)
+    modelrcnn.load_weights(COCO_MODEL_PATH, by_name=True)
     class_names = [
         'BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
         'bus', 'train', 'truck', 'boat', 'traffic light',
@@ -129,22 +175,62 @@ if __name__ == '__main__':
         'teddy bear', 'hair drier', 'toothbrush'
     ]
 
-    capture = cv2.VideoCapture(0)
-
-    # these 2 lines can be removed if you dont have a 1080p camera.
-    capture.set(cv2.CAP_PROP_FRAME_WIDTH, 960)
-    capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-
     while True:
-        ret, frame = capture.read()
-        results = model.detect([frame],verbose=0)
+        ret , frame = capture.read()
+        input_image = frame
+
+        original_height, original_width, num_channels = input_image.shape
+        input_image = scipy.misc.imresize(input_image, [args.input_height, args.input_width], interp='lanczos')
+        input_image = input_image.astype(np.float32) / 255
+        input_images = np.stack((input_image, np.fliplr(input_image)), 0)
+
+        # SESSION
+        config = tf.ConfigProto(allow_soft_placement=True)
+        sess = tf.Session(config=config)
+
+        # INIT
+        sess.run(tf.global_variables_initializer())
+        sess.run(tf.local_variables_initializer())
+        coordinator = tf.train.Coordinator()
+
+        disp = sess.run(modeld.disp_left_est[0], feed_dict={left: input_images})
+        disp_pp = post_process_disparity(disp.squeeze()).astype(np.float32)
+
+        results = modelrcnn.detect([frame], verbose=0)
         r = results[0]
         frame = display_instances(
             frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
         )
-        cv2.imshow('frame', frame)
+        cv2.imshow('frame1', frame)
+
+
+        disp_to_img = scipy.misc.imresize(disp_pp.squeeze(), [original_height, original_width])
+        color = cv2.applyColorMap(disp_to_img,cv2.COLORMAP_SPRING)
+        cv2.imshow('frame', color)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    capture.release()
-    cv2.destroyAllWindows()
+
+def main(_):
+
+
+    params = monodepth_parameters(
+        encoder=args.encoder,
+        height=args.input_height,
+        width=args.input_width,
+        batch_size=2,
+        num_threads=1,
+        num_epochs=1,
+        do_stereo=False,
+        wrap_mode="border",
+        use_deconv=False,
+        alpha_image_loss=0,
+        disp_gradient_loss_weight=0,
+        lr_loss_weight=0,
+        full_summary=False)
+
+    test_simple(params)
+
+if __name__ == '__main__':
+
+    tf.app.run()
