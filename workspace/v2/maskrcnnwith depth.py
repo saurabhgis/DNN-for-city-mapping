@@ -80,12 +80,17 @@ def display_instances(image, boxes, masks, ids, names, scores):
         score = scores[i] if scores is not None else None
         caption = '{} {:.2f}'.format(label, score) if score else label
         mask = masks[:, :, i]
-
+        depth = np.mean(mask)
+        #print(mask.shape)
         #image = apply_mask(image, mask, color)
-        image = cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
+        depcap = '{} {:.2f}'.format('depth', depth)
         image = cv2.putText(
-            image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
+            image, depcap, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
         )
+        image = cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
+        # image = cv2.putText(
+        #     image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
+        # )
 
     return image
 
