@@ -81,7 +81,7 @@ def display_instances(image, boxes, masks, ids, names, scores):
         caption = '{} {:.2f}'.format(label, score) if score else label
         mask = masks[:, :, i]
 
-        image = apply_mask(image, mask, color)
+        #image = apply_mask(image, mask, color)
         image = cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
         image = cv2.putText(
             image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
@@ -198,15 +198,15 @@ def test_simple(params):
 
         results = modelrcnn.detect([frame], verbose=0)
         r = results[0]
-        frame = display_instances(
-            frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
-        )
-        cv2.imshow('frame1', frame)
-
 
         disp_to_img = scipy.misc.imresize(disp_pp.squeeze(), [original_height, original_width])
-        color = cv2.applyColorMap(disp_to_img,cv2.COLORMAP_SPRING)
-        cv2.imshow('frame', color)
+
+        frame = display_instances(
+            disp_to_img, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
+        )
+
+        cv2.imshow('frame', frame)
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
