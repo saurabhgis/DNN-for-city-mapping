@@ -1,0 +1,32 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\contentsline {paragraph}{Keywords:}{iv}{paragraph*.1}% 
+\contentsline {paragraph}{Supervisor:}{iv}{paragraph*.2}% 
+\babel@toc {czech}{}
+\contentsline {paragraph}{Kl\'i\v cov\'a\ slova:}{iv}{paragraph*.3}% 
+\contentsline {paragraph}{P\v reklad\ n\'azvu:}{iv}{paragraph*.4}% 
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {czech}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Aim and objective of project }{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Overview of Project}{1}{section.1.2}% 
+\contentsline {chapter}{\numberline {2}State of the art}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Layered Interpretation of Street View Images}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Building Instance classification using street view images \cite {Kang2018}}{3}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Automatic Discovery and Geotagging of Objects from Street View Imagery}{3}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}Methodology}{5}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}Conclusion}{7}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}Bibliography}{9}{chapter.5}% 
+\contentsline {chapter}{Bibliography}{11}{chapter*.5}% 

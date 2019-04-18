@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{StanfordVisionLab2015}
+{Stanford Vision Lab}, ``{Large Scale Visual Recognition Challenge (ILSVRC)},''
+  2015.
+
+\bibitem{Developers.google.com2018}
+Developers.google.com, ``{Developer Guide},'' 2018.
+
+\bibitem{He2017}
+K.~He, G.~Gkioxari, P.~Dollar, and R.~Girshick, ``{Mask R-CNN},'' {\em
+  Proceedings of the IEEE International Conference on Computer Vision},
+  vol.~2017-Octob, pp.~2980--2988, 2017.
+
+\bibitem{PythonSoftwareFoundation2019}
+{Python Software Foundation}, ``{Python},'' 2019.
+
+\bibitem{Colab.research.google.com}
+Colab.research.google.com, ``{Welcome to Colaboratory!}.''
+
+\bibitem{Conservancy}
+S.~F. Conservancy, ``git --fast-version-control.''
+
+\bibitem{Kang2018}
+J.~Kang, M.~K{\"{o}}rner, Y.~Wang, H.~Taubenb{\"{o}}ck, and X.~X. Zhu,
+  ``{Building instance classification using street view images},'' {\em ISPRS
+  Journal of Photogrammetry and Remote Sensing}, vol.~145, pp.~44--59, 2018.
+
+\bibitem{Chollet2017}
+F.~Chollet, ``{Xception: Deep learning with depthwise separable
+  convolutions},'' {\em Proceedings - 30th IEEE Conference on Computer Vision
+  and Pattern Recognition, CVPR 2017}, vol.~2017-Janua, pp.~1800--1807, 2017.
+
+\end{thebibliography}

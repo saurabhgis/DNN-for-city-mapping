@@ -1,0 +1,26 @@
+%!TEX ROOT=Thesis.tex
+
+\chapter{Introduction}
+
+\section{Aim and objective of project }
+
+The aim is to design, implement and experimentally evaluate a deep neural network based solution for city mapping using Google Street View images. The proposed software solution should allow the user to request Google Street View imagery for any given location specified as geojson, perform analysis and feature extraction using deep neural network(s) and output vectorized description projected and visualized over an underlying map. User interface for the application execution, processing of the input images and visualization of the results should be realized using Google Colab to utilize Google TPUs. Existing pre-trained models should be explored first, thorough experimental evaluation on publicly available datasets should follow. Comparison with related state-of-the-art work is integral part of the work and should be presented in the final thesis. Recommendation: implementation should be done in Python, using Keras and TensorFlow frameworks.
+
+\section{Overview of Project}
+
+The project is software solution with the aim of achieving the task described above. There are few important part of the project which is implemented as a individual task in order to make it easy to debug. 
+
+The core implementation of project is depends on the Google Street View \cite{Developers.google.com2018} imaginary. The API consist of helper function and parameter to get the images at certain location available in Google street view.Task was to Use API with Python \cite{PythonSoftwareFoundation2019} script to download the required images under the area by the coordinates provided .
+
+Then this Images are processed with Deep Neural Network for classification and segmentation of objects, Mask R-CNN \cite{He2017} with pre-trained model consist of 82 classes from matterport \cite is used . The resulted Images are classified and segmented with the bounding box with there confidence. For purpose of project ,the confidence threshold is kept 0.7 for classification.
+
+Experimentation is done to localized the object in map.Map is created with Folium \cite and represented in different ways ,the detected objects are put with different marker in the map and view is represented as heatmap to get better understanding of density of object and its type in the scenario
+
+
+
+
+
+
+
+
+

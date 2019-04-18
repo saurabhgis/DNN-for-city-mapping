@@ -40,9 +40,9 @@ def display_instances(image, boxes, masks, ids, names, scores):
         score = scores[i] if scores is not None else None
         caption = '{} {:.2f}'.format(label, score) if score else label
         mask = masks[:, :, i]
-
+        print(np.mean(mask))
         image = apply_mask(image, mask, color)
-        image = cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
+        # image = cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
         image = cv2.putText(
             image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
         )
@@ -73,14 +73,15 @@ if __name__ == '__main__':
     '''
     start = time.time()
     ROOT_DIR = os.getcwd()
-    COCO_DIR = os.path.join(os.path.normpath(os.getcwd() + os.sep + os.pardir),'MASK RCNN' )
+    COCO_DIR = os.path.join(os.path.normpath(os.getcwd() + os.sep + os.pardir),'Mask RCNN' )
     MODEL_DIR = os.path.join(ROOT_DIR, "logs")
     COCO_MODEL_PATH = os.path.join(COCO_DIR,"mask_rcnn_coco.h5")
 
     if os.path.isdir('Detection') is False:
         os.mkdir('Detection')
     DET_DIR = os.path.join(ROOT_DIR, "Detection")
-    DET_PATH = DET_DIR + "\ "
+    DET_PATH = DET_DIR + os.sep
+    #print(DET_PATH)
     apiargs = {
         'location': '50.0753397,14.4189888 ; 50.0795436,14.3907308 ;50.10291748018805, 14.39132777985096',
         'size': '640x640',
@@ -170,7 +171,7 @@ if __name__ == '__main__':
     ]
     onlyfiles = []
     while True:
-        images = os.path.join(ROOT_DIR,'downloads')
+        images = os.path.join(ROOT_DIR,'Downloads')
         for f in listdir(images):
             if f is not 'metadat.json':
                 onlyfiles.append(f)

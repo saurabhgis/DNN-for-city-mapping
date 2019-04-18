@@ -20,11 +20,13 @@ api_list = google_streetview.helpers.api_list(apiargs)
 # Create a results object for all possible queries
 results = google_streetview.api.results(api_list)
 
-# Preview results
-results.preview()
-
-# Download images to directory 'downloads'
-results.download_links('downloads')
-
-# Save metadata
-results.save_metadata('metadata.json')
+# # Preview results
+# results.preview()
+#
+# # Download images to directory 'downloads'
+# results.download_links('downloads')
+#
+# # Save metadata
+# results.save_metadata('metadata.json')
+#print(results.metadata[2]['location'])#['lat'])
+print(len(results.metadata))

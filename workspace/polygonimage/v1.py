@@ -2,7 +2,7 @@
 import google_streetview.api
 import google_streetview.helpers
 import json
-
+import folium
 
 
 '''
@@ -23,7 +23,7 @@ for i in range(0,2):
 
 apiargs = {
 #  'location': location,
-  'location':'50.081584, 14.390405 ;50.082674, 14.386711',
+  'location':location,
   'size': '640x640',
   'heading': '180',
   'fov': '90',

@@ -1,0 +1,13 @@
+%!TEX ROOT=Thesis.tex
+
+\chapter{State of the art}
+
+\section{Layered Interpretation of Street View Images} 
+Proposed a layered street view model to encode both depth and semantic information on street view images for autonomous driving. They propose a 4-layer street view model, layers encode semantic classes like ground, pedestrians, vehicles, buildings, and sky in addition to the depths. The only input to our algorithm is a pair of stereo images. Deep neural network was used to extract the appearance features for semantic classes.
+
+\section{Building Instance classification using street view images \cite{Kang2018}} 
+Land-use classification based on spaceborne or aerial remote sensing images has been extensively studied over the past decades. Proposed a general framework for classifying the functionality of individual buildings. The proposed method is based on Convolutional Neural Networks (CNNs) which classify façade structures from street view images, such as Google StreetView[2], in addition to remote sensing images which usually only show roof structures. Geographic information was utilized to mask out individual buildings, and to associate the corresponding street view images. In addition, the method was applied to generate building classification maps on both region and city scales of several cities in Canada and the US
+
+\section{Automatic Discovery and Geotagging of Objects from Street View Imagery}
+This paper describe about solution to localize the object from multiple view using geometry.To geolocate the object in image they developed Markov Field model to perform object triangulation.They use 2 SOTA  FCNN for semantic segmentation and monocular depth estimation.The geolocalization is done with Google street view images with Triangular based MRF model descriped in paper. End Result of the projects looks similar to the output of the resulting output but lacks the precision which is done with the help of depth image and Triangulation-based MRF model
+

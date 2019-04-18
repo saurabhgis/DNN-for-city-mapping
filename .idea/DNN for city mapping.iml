@@ -7,7 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/workspace/Google colab" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/Google street view" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN/cocoapi" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN/Mask_RCNN" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN/Mask_RCNN/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN/Mask_RCNN/images" isTestSource="false" />
@@ -15,8 +14,27 @@
       <sourceFolder url="file://$MODULE_DIR$/workspace/Mask RCNN/Mask_RCNN/samples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/polygonimage" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/v1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth/utils/filenames" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/v2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/v2/Detection" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/v2/Downloads" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/Mask_RCNN" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi/PythonAPI" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi/img" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi/common" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi/PythonAPI/pycocotools" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/MASK_RCNN/cocoapi/PythonAPI/demos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth/1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth/output" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/monodepth/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/v3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/v3" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
