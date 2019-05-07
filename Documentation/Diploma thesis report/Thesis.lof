@@ -18,5 +18,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Head architecture of Mask R-CNN\relax }}{7}{figure.3.1}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces street view structure\relax }}{10}{figure.4.1}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces List of classes\relax }}{10}{figure.4.2}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces parameters of GSV images\relax }}{11}{figure.4.3}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces pitch with 90\relax }}{12}{figure.4.4}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces pitch with -90\relax }}{12}{figure.4.5}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Configurable parameter in Mask R-CNN\relax }}{13}{figure.4.6}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces wronf classification with good confidence\relax }}{13}{figure.4.7}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

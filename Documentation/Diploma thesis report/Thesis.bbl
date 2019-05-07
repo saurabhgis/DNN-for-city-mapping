@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{StanfordVisionLab2015}
 {Stanford Vision Lab}, ``{Large Scale Visual Recognition Challenge (ILSVRC)},''
@@ -21,14 +21,34 @@ Colab.research.google.com, ``{Welcome to Colaboratory!}.''
 \bibitem{Conservancy}
 S.~F. Conservancy, ``git --fast-version-control.''
 
+\bibitem{Kita-wojciechowska}
+K.~Kita-wojciechowska and E.~Sciences, ``{Google Street View image of a house
+  predicts car accident risk of its resident},''
+
 \bibitem{Kang2018}
 J.~Kang, M.~K{\"{o}}rner, Y.~Wang, H.~Taubenb{\"{o}}ck, and X.~X. Zhu,
   ``{Building instance classification using street view images},'' {\em ISPRS
   Journal of Photogrammetry and Remote Sensing}, vol.~145, pp.~44--59, 2018.
 
-\bibitem{Chollet2017}
-F.~Chollet, ``{Xception: Deep learning with depthwise separable
-  convolutions},'' {\em Proceedings - 30th IEEE Conference on Computer Vision
-  and Pattern Recognition, CVPR 2017}, vol.~2017-Janua, pp.~1800--1807, 2017.
+\bibitem{Lin2017}
+T.~Y. Lin, P.~Doll{\'{a}}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie,
+  ``{Feature pyramid networks for object detection},'' {\em Proceedings - 30th
+  IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2017},
+  vol.~2017-Janua, pp.~936--944, 2017.
+
+\bibitem{matterport_maskrcnn_2017}
+W.~Abdulla, ``Mask r-cnn for object detection and instance segmentation on
+  keras and tensorflow.'' \url{https://github.com/matterport/Mask_RCNN}, 2017.
+
+\bibitem{DBLP:journals/corr/LinMBHPRDZ14}
+T.-Y. Lin, M.~Maire, S.~J. Belongie, L.~D. Bourdev, R.~B. Girshick, J.~Hays,
+  P.~Perona, D.~Ramanan, P.~Doll{\'{a}}r, and C.~L. Zitnick, ``{Microsoft
+  {\{}COCO:{\}} Common Objects in Context},'' {\em CoRR}, vol.~abs/1405.0,
+  2014.
+
+\bibitem{Culjak2012}
+I.~Culjak, D.~Abram, T.~Pribanic, H.~Dzapo, and M.~Cifrek, ``{A brief
+  introduction to OpenCV},'' {\em MIPRO, 2012 Proceedings of the 35th
+  International Convention}, pp.~1725--1730, 2012.
 
 \end{thebibliography}

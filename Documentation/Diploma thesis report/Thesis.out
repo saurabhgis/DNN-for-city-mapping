@@ -1,11 +1,64 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Aim and objective of project }{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Overview of Project}{chapter.1}% 3
-\BOOKMARK [0][-]{chapter.2}{State of the art}{}% 4
-\BOOKMARK [1][-]{section.2.1}{Layered Interpretation of Street View Images}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.2}{Building Instance classification using street view images Kang2018}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.3}{Automatic Discovery and Geotagging of Objects from Street View Imagery}{chapter.2}% 7
-\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 8
-\BOOKMARK [0][-]{chapter.4}{Conclusion}{}% 9
-\BOOKMARK [0][-]{chapter.5}{Bibliography}{}% 10
-\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 11
+\BOOKMARK [0][-]{chapter.2}{SOTA}{}% 4
+\BOOKMARK [0][-]{chapter.3}{Theory}{}% 5
+\BOOKMARK [1][-]{section.3.1}{KERAS}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.2}{TensorFlow}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.3}{Google Colab}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.4}{Mask R-CNN}{chapter.3}% 9
+\BOOKMARK [0][-]{chapter.4}{Methodology}{}% 10
+\BOOKMARK [1][-]{section.4.1}{hardware and software setup}{chapter.4}% 11
+\BOOKMARK [2][-]{subsection.4.1.1}{hardware setup}{section.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.1.2}{list of libraies used}{section.4.1}% 13
+\BOOKMARK [1][-]{section.4.2}{Pretrained model details}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.3}{Google street view}{chapter.4}% 15
+\BOOKMARK [2][-]{subsection.4.3.1}{Basic overview}{section.4.3}% 16
+\BOOKMARK [2][-]{subsection.4.3.2}{Parameters in Street view }{section.4.3}% 17
+\BOOKMARK [2][-]{subsection.4.3.3}{Selection of parameters}{section.4.3}% 18
+\BOOKMARK [1][-]{section.4.4}{Mask Rcnn}{chapter.4}% 19
+\BOOKMARK [2][-]{subsection.4.4.1}{Description about Mask Rcnn}{section.4.4}% 20
+\BOOKMARK [2][-]{subsection.4.4.2}{How Its implement in python with Keras and tensorflow backend with citiation }{section.4.4}% 21
+\BOOKMARK [2][-]{subsection.4.4.3}{Visulization of output from Mask R-CNN}{section.4.4}% 22
+\BOOKMARK [2][-]{subsection.4.4.4}{Classes used in map}{section.4.4}% 23
+\BOOKMARK [2][-]{subsection.4.4.5}{some drawback of Mask R-CNN during classification}{section.4.4}% 24
+\BOOKMARK [1][-]{section.4.5}{Google Colab}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.5.1}{basic overview}{section.4.5}% 26
+\BOOKMARK [2][-]{subsection.4.5.2}{advantages of using this}{section.4.5}% 27
+\BOOKMARK [2][-]{subsection.4.5.3}{changes needed to implement this }{section.4.5}% 28
+\BOOKMARK [2][-]{subsection.4.5.4}{how it improved the performance ,types of runtime}{section.4.5}% 29
+\BOOKMARK [1][-]{section.4.6}{Folium}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.6.1}{basic overview and its features}{section.4.6}% 31
+\BOOKMARK [2][-]{subsection.4.6.2}{how i used it in project }{section.4.6}% 32
+\BOOKMARK [2][-]{subsection.4.6.3}{classes and types i object I marked in the map and why did I skipped others}{section.4.6}% 33
+\BOOKMARK [2][-]{subsection.4.6.4}{types of representation of maps }{section.4.6}% 34
+\BOOKMARK [1][-]{section.4.7}{experimentation}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.7.1}{use of depth images }{section.4.7}% 36
+\BOOKMARK [2][-]{subsection.4.7.2}{difference in usage of depth in mapping and without depth}{section.4.7}% 37
+\BOOKMARK [2][-]{subsection.4.7.3}{Algorithm about how the objects are localize in the 2d map}{section.4.7}% 38
+\BOOKMARK [2][-]{subsection.4.7.4}{how i tackle with the localization of same object }{section.4.7}% 39
+\BOOKMARK [2][-]{subsection.4.7.5}{algorithm to find the proper image under the polygon}{section.4.7}% 40
+\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 41
+\BOOKMARK [1][-]{section.5.1}{downloading of libraries }{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{downloading mask Rcnn model}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.3}{preparing google street view api}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{visuallizing the results }{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.5}{algorithm of using follium to put marker in map}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.6}{visualization of maps}{chapter.5}% 47
+\BOOKMARK [0][-]{chapter.6}{Experimentation evaluation}{}% 48
+\BOOKMARK [1][-]{section.6.1}{performance of Mask R-CNN on GSV dataset}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{performance of GSV Images }{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{performance in maps}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.4}{experimentaion of overpass api to get the street coordinates}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.5}{use of depth Images}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 54
+\BOOKMARK [1][-]{section.7.1}{advantages}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.2}{drawback}{chapter.7}% 56
+\BOOKMARK [2][-]{subsection.7.2.1}{neccesary condition to have results}{section.7.2}% 57
+\BOOKMARK [1][-]{section.7.3}{how it is similar with other sota projects above}{chapter.7}% 58
+\BOOKMARK [1][-]{section.7.4}{google pricing }{chapter.7}% 59
+\BOOKMARK [2][-]{subsection.7.4.1}{Google colab}{section.7.4}% 60
+\BOOKMARK [2][-]{subsection.7.4.2}{google api}{section.7.4}% 61
+\BOOKMARK [1][-]{section.7.5}{will training on other data set might changed results }{chapter.7}% 62
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 63
+\BOOKMARK [0][-]{chapter*.10}{Bibliography}{}% 64

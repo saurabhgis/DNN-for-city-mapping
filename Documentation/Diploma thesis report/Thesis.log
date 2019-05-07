@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.12)  18 APR 2019 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.12)  7 MAY 2019 06:44
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -219,7 +219,36 @@ File: bk11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 (ctuth-names.tex
 File: ctuthesis-names.def 2014/01/18 v0.1 "Names"partoftheclassctuthesis
-)) (ctuth-pkg.tex
+))
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+) (ctuth-pkg.tex
 File: ctuth-pkg.tex 2016/06/15 v0.1t1606152353 "Packages" part of the class ctu
 thesis
 
@@ -268,16 +297,10 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\microtyp
 e.sty"
 Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
-
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
-y"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
-)
 \MT@toks=\toks18
 \MT@count=\count179
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen135
+\MT@outer@kern=\dimen137
 LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
 \MT@listname@count=\count180
 
@@ -295,30 +318,6 @@ Package microtype Info: Loading configuration file microtype.cfg.
 e.cfg"
 File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
 ))
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
-sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
-sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
-ics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 99.
-
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
-x.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen136
-\Gin@req@width=\dimen137
-)
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pdfpages.
 sty"
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
@@ -873,40 +872,24 @@ ass ctuthesis
 ) (Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 39.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Info: Redefining \microtypecontext on input line 38.
-Package microtype Info: Generating PDF output.
-Package microtype Info: Character protrusion enabled (level 2).
-Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `basictext'.
-Package microtype Info: No adjustment of tracking.
-Package microtype Info: No adjustment of interword spacing.
-Package microtype Info: No adjustment of character kerning.
-
-("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-cmr.c
-fg"
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
 )
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
@@ -936,6 +919,22 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Info: Redefining \microtypecontext on input line 39.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-cmr.c
+fg"
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
 )
 \AtBeginShipoutBox=\box88
 
@@ -987,7 +986,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 39.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -999,9 +998,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
  (Thesis.out) (Thesis.out)
 \@outlinefile=\write4
 \openout4 = `Thesis.out'.
@@ -1010,35 +1009,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 41.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 40.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 41.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 41.
 
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 40.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 41.
 
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 40.
+(Font)              <10.95> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 40.
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+(Font)              <6> on input line 41.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1047,7 +1046,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1056,19 +1055,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<ctu_logo_black.pdf, id=47, 366.36874pt x 279.0425pt>
+<ctu_logo_black.pdf, id=235, 366.36874pt x 279.0425pt>
 File: ctu_logo_black.pdf Graphic file (type pdf)
 <use ctu_logo_black.pdf>
-Package pdftex.def Info: ctu_logo_black.pdf  used on input line 40.
+Package pdftex.def Info: ctu_logo_black.pdf  used on input line 41.
 (pdftex.def)             Requested size: 85.86746pt x 65.40001pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 40.
+(Font)              <14.4> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 40.
+(Font)              <10> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 40.
+(Font)              <7> on input line 41.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 40--40
+Overfull \hbox (5.0pt too wide) in paragraph at lines 41--41
 []|| [][][] 
  []
 
@@ -1078,7 +1077,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 40--40
 
 {C:/Users/varun/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./ctu_logo_
 black.pdf>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 40.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 41.
 
 ("C:\Users\varun\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1128,7 +1127,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-Underfull \hbox (badness 4328) in paragraph at lines 40--40
+Underfull \hbox (badness 4328) in paragraph at lines 41--41
 \T1/lmr/m/n/10.95 (+20) With the ad-vance-ment com-pu-ta-tion
  []
 
@@ -1139,7 +1138,6 @@ Underfull \hbox (badness 4328) in paragraph at lines 40--40
 \openout5 = `Thesis.toc'.
 
  [5
-
 
 ] (Thesis.lof)
 \tf@lof=\write6
@@ -1193,76 +1191,146 @@ LaTeX Warning: Citation `i' on page 1 undefined on input line 15.
 
 LaTeX Warning: Citation `a' on page 1 undefined on input line 17.
 
-[1
+) [1
 
 
 
 
 
-]) (SOTA.tex
+] (SOTA.tex
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 3.
  [2]
 Chapter 2.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 8.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 7.
+
+
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 11.
 
 [3
 
-]) (Method.tex [4]
+]) (theory.tex [4]
 Chapter 3.
-) (conclusion.tex [5
 
-] [6
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+]
+[6]
+<"picture/head arch of mrcnn".jpg, id=392, 196.735pt x 66.74937pt>
+File: "picture/head arch of mrcnn".jpg Graphic file (type jpg)
+<use "picture/head arch of mrcnn".jpg>
+Package pdftex.def Info: "picture/head arch of mrcnn".jpg  used on input line 3
+7.
+(pdftex.def)             Requested size: 254.09889pt x 86.21193pt.
+) (Method.tex [7 <./picture/head arch of mrcnn.jpg>] [8
 
 ]
 Chapter 4.
-) [7] [8
+<picture/streetviewapi.jpg, id=405, 451.6875pt x 107.90312pt>
+File: picture/streetviewapi.jpg Graphic file (type jpg)
+<use picture/streetviewapi.jpg>
+Package pdftex.def Info: picture/streetviewapi.jpg  used on input line 18.
+(pdftex.def)             Requested size: 254.09889pt x 60.70193pt.
+[9]
+<"picture/list of classes".jpg, id=417, 283.0575pt x 107.90312pt>
+File: "picture/list of classes".jpg Graphic file (type jpg)
+<use "picture/list of classes".jpg>
+Package pdftex.def Info: "picture/list of classes".jpg  used on input line 39.
+(pdftex.def)             Requested size: 254.09889pt x 96.86658pt.
+ [10 <./picture/streetviewapi.jpg> <./picture/list of classes.jpg>]
+<picture/parametergsv.jpg, id=426, 252.945pt x 104.89188pt>
+File: picture/parametergsv.jpg Graphic file (type jpg)
+<use picture/parametergsv.jpg>
+Package pdftex.def Info: picture/parametergsv.jpg  used on input line 62.
+(pdftex.def)             Requested size: 254.09889pt x 105.37175pt.
+<"picture/pitchwith 90".jpg, id=428, 117.43875pt x 109.91063pt>
+File: "picture/pitchwith 90".jpg Graphic file (type jpg)
+<use "picture/pitchwith 90".jpg>
+Package pdftex.def Info: "picture/pitchwith 90".jpg  used on input line 82.
+(pdftex.def)             Requested size: 145.19778pt x 135.89027pt.
+<"picture/pitchwith-90".jpg, id=429, 104.39pt x 104.89188pt>
+File: "picture/pitchwith-90".jpg Graphic file (type jpg)
+<use "picture/pitchwith-90".jpg>
+Package pdftex.def Info: "picture/pitchwith-90".jpg  used on input line 89.
+(pdftex.def)             Requested size: 145.19778pt x 145.91609pt.
+ [11 <./picture/parametergsv.jpg>] [12 <./picture/pitchwith 90.jpg> <./picture/
+pitchwith-90.jpg>]
+<"picture/config of mrcn".jpg, id=444, 167.62625pt x 127.47626pt>
+File: "picture/config of mrcn".jpg Graphic file (type jpg)
+<use "picture/config of mrcn".jpg>
+Package pdftex.def Info: "picture/config of mrcn".jpg  used on input line 113.
+(pdftex.def)             Requested size: 254.09889pt x 193.23683pt.
+<picture/knife.jpg, id=446, 312.66812pt x 163.61125pt>
+File: picture/knife.jpg Graphic file (type jpg)
+<use picture/knife.jpg>
+Package pdftex.def Info: picture/knife.jpg  used on input line 125.
+(pdftex.def)             Requested size: 254.09889pt x 132.96625pt.
+ [13 <./picture/config of mrcn.jpg> <./picture/knife.jpg>])
+(Implementaion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15] [16
 
 ]
 Chapter 5.
-(Thesis.bbl [9] [10
+) (exper.tex [17] [18
 
 ]
-Underfull \hbox (badness 1325) in paragraph at lines 4--6
-[]\T1/lmr/m/n/10.95 (+20) Stanford Vi-sion Lab, ``Large Scale Vi-sual Recog-ni-
-tion Chal-lenge
- []
+Chapter 6.
+) (conclusion.tex [19] [20
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
+]
+Chapter 7.
+) [21] [22
+
+]
+Chapter 8.
+(Thesis.bbl [23] [24
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
+ [25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
  (Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 77B02A1A2FD6D4A2D57069FB65A09D4E;755.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
 
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: F5D4A6731842342F63F1D34601EF4477;4347
+(rerunfilecheck)             After:  45166E9C53F32F2415F4C8A6785497F8;4812.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
- 22056 strings out of 492946
- 390268 string characters out of 3126266
- 508294 words of memory out of 3000000
- 25547 multiletter control sequences out of 15000+200000
- 599793 words of font info for 107 fonts, out of 3000000 for 9000
+ 22299 strings out of 492946
+ 394386 string characters out of 3126266
+ 514929 words of memory out of 3000000
+ 25656 multiletter control sequences out of 15000+200000
+ 612370 words of font info for 126 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,63p,992b,793s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,17n,63p,992b,795s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
 c}<C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
 mr10.pfb><C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
 m/lmri10.pfb><C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmssbx10.pfb><C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmsso10.pfb>
-Output written on Thesis.pdf (17 pages, 204139 bytes).
+1/public/lm/lmsso10.pfb><C:/Users/varun/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmtt10.pfb>
+Output written on Thesis.pdf (31 pages, 606856 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 19038 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 24574 words of extra memory for PDF output out of 24883 (max. 10000000)
 

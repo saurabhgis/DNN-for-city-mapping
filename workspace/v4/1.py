@@ -326,7 +326,6 @@ def test_simple(params):
                 frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores'],resultsg
             )
 
-
             cv2.imwrite(DET_PATH + str(n) + '.jpeg', frame)
 
         cv2.destroyAllWindows()

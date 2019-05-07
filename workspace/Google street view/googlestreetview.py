@@ -1,6 +1,7 @@
 # Import google_streetview for the api and helper module
 import google_streetview.api
 import google_streetview.helpers
+
 #  'location': '46.414382,10.013988;40.720032,-73.988354',
 # Create a dictionary with multiple parameters separated by ;
 apiargs = {
@@ -23,8 +24,8 @@ results = google_streetview.api.results(api_list)
 # # Preview results
 # results.preview()
 #
-# # Download images to directory 'downloads'
-# results.download_links('downloads')
+# Download images to directory 'downloads'
+results.download_links('downloads')
 #
 # # Save metadata
 # results.save_metadata('metadata.json')

@@ -1,5 +1,7 @@
 \documentclass{ctuthesis}
 
+\usepackage{graphicx}
+
 \ctusetup{
 	xdoctype = M,
 	xfaculty = F3,
@@ -9,8 +11,8 @@
 	%	title-czech = {Sázení uranu},
 	department-english = {Department of Cybernetics},
 	author = {Varun Burde},
-	supervisor = {Ing. Michal Reinštein, Ph.D.},
-	supervisor-address = { Karlovo nam. 13, 121 35 Prague 2, Czech Republic, room E225b},
+	supervisor = {Ing.Michal Reinštein,Ph.D.},
+	supervisor-address = {E225b,\\ Karlovo nam. 13,\\ 121 35 Prague 2,\\ Czech Republic},
 	month = 5,
 	year = 2019,
 }
@@ -18,11 +20,10 @@
 \ctuprocess
 
 
-
 \begin{abstract-english}
 With the advancement computation power and large datasets finally made a huge improvement of Deep neural network leading many widespread applications. One of such application is solving computer vision problems like classification and segmentation. Also Competition like ImageNet\cite{StanfordVisionLab2015} Large Scale Visual Recognition Challenge, took the solution to next level, in some cases classification is better than Human. 
  
-This report describes the evaluation of pre-trained deep neural network on Google StreetView Images\cite{Developers.google.com2018}. Pretrained model used is Mask RCNN\cite{He2017} .Implementation is done in Python\cite{PythonSoftwareFoundation2019} using Keras  and TesnsorFlow-GPU framework. User interface for the application execution, processing of the input images and visualization of the results is realized using Google Colab\cite{Colab.research.google.com} with repository in GIT\cite{Conservancy}.
+This report describes the evaluation of pre-trained deep neural network on Google StreetView Images\cite{Developers.google.com2018}. Pretrained model of Mask RCNN\cite{He2017} for matterport \cite{}.Implementation is done in Python\cite{PythonSoftwareFoundation2019} using Keras  and TesnsorFlow-GPU framework. User interface for the application execution, processing of the input images and visualization of the results is realized using Google Colab\cite{Colab.research.google.com} with repository in GIT\cite{Conservancy}.
 
 A pipeline was created for the task, user provide the parameters like coordinates for the Google StreetView API \cite{Developers.google.com2018}. Python\cite{PythonSoftwareFoundation2019} script downloads the available images to that location then images were pre-processed to fit into classifier. Classification is done on the Images depending on the architecture of the Neural Network.A vectorized map is generated as a result of classified Images and put into map using Folium. 
 
@@ -43,7 +44,13 @@ Map is represented in various form as heat-map for better understanding of scena
 
 \input{SOTA}
 
+\input{theory}
+
 \input{Method}
+
+\input{Implementaion}
+
+\input{exper}
 
 \input{conclusion}
 		

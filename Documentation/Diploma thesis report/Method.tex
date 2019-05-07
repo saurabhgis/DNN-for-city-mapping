@@ -2,4 +2,175 @@
 
 \chapter{Methodology}
 
-here the method and the 
+\section{hardware and software setup}
+
+\subsection{hardware setup}
+The uses the Tensorflow gpu backend along with Nvdia cuda dnn ver ..... and python as a scripting language. The local hardware used with GPU unit Nvdia Gtx 1060 and CPU unit - intel core i5 6300 CPU
+
+\subsection{list of libraies used}
+Many different python packages used for different purpose .
+
+\subsubsection{Google street view}
+Google street view library is used for the using google street view api which initiate the url request to the server with the parametes and developer key to download the images and metadata.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{picture/streetviewapi}
+	\caption{street view structure}
+	\label{fig:streetviewapi}
+\end{figure}
+
+Figure \ref{fig:list-of-classes} structure of how google street view api works
+
+\subsubsection{Folium}
+This package allow to create a world map place the marker of classified and detected objects into 2d world map with overlay of markers and also to create heatmaps 
+
+\subsubsection{TensorFlow}
+This package enables user to create high dimensional data type which can be efficiently use to perform high computation process on huge and dense data 
+
+\subsubsection{Keras}
+This package enable user to define the architecture of the Deep Neural network, defining the order of different layer there activation functions ,learning rate etc.
+
+\section{Pretrained model details}
+The architecture and pre-trained model use in this project is taken from Matterport  \cite{matterport_maskrcnn_2017}.The pre-trained model was trained on COCO \cite{DBLP:journals/corr/LinMBHPRDZ14} data set with 81 classes.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"picture/list of classes"}
+	\caption{List of classes}
+	\label{fig:list-of-classes}
+\end{figure}
+
+Figure \ref{fig:list-of-classes} shows the list of classes which can be used with pre - trained model caption.
+
+\section{Google street view}
+
+
+\subsection{Basic overview}
+Street View, by Google Maps, is a virtual representation of our surroundings on Google Maps, consisting of millions of panoramic images. Street View’s content comes from two sources - Google and contributors. Through our collective efforts, we enable people everywhere to virtually explore the world.\cite{Developers.google.com2018}
+
+Images form street view was the major dataset for the project.Street view images are in form of 360 panorama,for the purpose of projects 640x640 image is used with field of view 90 to process the DNN efficiently.  
+
+
+\subsection{Parameters in Street view }
+Google street view api uses python sent a url request to server in order to download the images , request is in form of string made up of parameters needed to fulfill the query. server returns back with the metadata with the information of images such as date , location in form of latitude and lattitude , panorama id ,status file name. 
+
+parameter string is in form of python dictionary with certain key like location , size ,heading , field of view, pitch and developer key . Developer key is one of the most important key in parameter to make this Google street api works. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{picture/parametergsv}
+	\caption{parameters of GSV images}
+	\label{fig:parametergsv}
+\end{figure}
+
+Figure \ref{fig:parametergsv} Example of street view api parameters to showing apiargs dictionary with key and values .
+
+\subsection{Selection of parameters}
+
+Location describes the coordinates of location in form of numbers of latitude, longitude. Multiple location can be fitted in arguments. If no image is available then API will return a generic image with text “Sorry, we have no imagery here."
+Size is the resolution of downloaded image. Highest resolution can be downloaded is 2048x2048 which is available with google premium account services. In project standard 640x640 image is used for the classification.
+
+Heading indicated the compass heading of the camera, accepted values are 0 to 360. North is indicated by 0. seven different heading angles were chosen for project cause each angle to have something different scenario along with some similarity with adjacent image makes easy to detect the confused objects.
+
+FOV is set to 90 for the project for optimum setting to avoid pixilation in case of zoom in and to less info per pixel in case of zoom out. For the privacy purpose the developer key is hidden.
+
+Parameters were chosen on basis will give us the best images with orientation, less noise and perfect fit for our model to test. For ex – having pitch to -90 or 90 gives the images headed up to sky and bottom to floor.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{"picture/pitchwith 90"}
+	\caption{pitch with 90}
+	\label{fig:pitchwith 90}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{"picture/pitchwith-90"}
+	\caption{pitch with -90}
+	\label{fig:pitchwith-90}
+\end{figure}
+
+Figure \ref{fig:pitchwith-90} and \ref{fig:pitchwith-90} Example images with pitch 90 and -90.
+
+
+\section{Mask Rcnn}
+
+\subsection{Description about Mask Rcnn}
+Mask R-CNN\cite{He2017} is state of the art Deep neural network proposed by Facebook research scientist Kaiming HE in 2017 which can perform instance segmentation and object detection together.I can have several different backbone architecture like Inception V2 ,ResNet 50 ,Resnet101 and Inception-Rennet2.For project ,the pre-trained model on COCO dataset with Resnet 101 architecture was used.Mask R-CNN with Resnet-101-FPN backbone was able to outperform other state of the art network like MNC and FCIS winner of COCO 2015 and 2016 segmentation challenge. 
+
+\subsection{How Its implement in python with Keras and tensorflow backend with citiation }
+Implementation of architecture of Mask R-CNN was done in Keras framework and TensorFlow backend ,Its taken from the open source repository from Matterport \cite{matterport_maskrcnn_2017} .Implementation of Mask R-CNN is done in python and can be seen in script model.py ,It consist definition of all the layer and architecture of Mask R-CNN in TensorFlow.
+
+\subsection{Visulization of output from Mask R-CNN}
+Implementation of creation of masks and image processing is done with the Opencv \cite{Culjak2012}.The output from the results are in form of image with overlay of text(class name) with number(confidence of being of that class,Form 0 to 1 ,being 1 means full confidence) bounding box to localize the classified object in Image and mask with color to cover pixel wise segmentation of detected object in image.
+
+\subsubsection{Parameters in Model}
+With ResNet 101 as back bone architecture, model provide several other parameters tweak to fit for application .Some of the easily configurable parameters are Minimum confidence detection , learning momentum , learning rate .etc 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"picture/config of mrcn"}
+	\caption{Configurable parameter in Mask R-CNN}
+	\label{fig:config-of-mrcn}
+\end{figure}
+
+Figure \ref{fig:config-of-mrcn} shows some of the configurable parameter of Mask R-CNN .Out of which number of classes depends on the pre trained model during testing. Minimum confidence decide creation of bounding box if the minimum 0.7 confidence is achieved at classification of that object. 
+
+\subsection{Classes used in map}
+As the end result of project results in heatmap of the objects detected in streets and the pre-trained model consist of several classes with doesnt show any significance to result ,rather can make some false results in order to avoid those. Only few classes were used for heatmap which describe the scenario of the area under test.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{picture/knife}
+	\caption{wronf classification with good confidence}
+	\label{fig:knife}
+\end{figure}
+Figure \ref{fig:knife} show example of class knife which is classified wrong and make less significance in street view images.
+
+\subsection{some drawback of Mask R-CNN during classification}
+misclassification and correct classification 
+how I dealt with too classification and eliminate the wrong one which parameters I changed
+
+
+\section{Google Colab}
+
+\subsection{basic overview}
+
+\subsection{advantages of using this}
+
+\subsection{changes needed to implement this }
+
+\subsection{how it improved the performance ,types of runtime}
+
+
+
+
+\section{Folium}
+
+\subsection{basic overview and its features}
+
+\subsection{how i used it in project }
+
+\subsection{classes and types i object I marked in the map and why did I skipped others}
+
+\subsection{types of representation of maps }
+
+will describe the representation in form of heat-map , markers and what different kind of Information I can get from different representation
+
+
+
+
+\section{experimentation}
+
+\subsection{use of depth images }
+
+\subsection{difference in usage of depth in mapping and without depth}
+
+\subsection{Algorithm about how the objects are localize in the 2d map}
+
+\subsection{how i tackle with the localization of same object }
+
+\subsection{algorithm to find the proper image under the polygon}
+like why i need proper image and what will happen if i dont use proper images 
+
