@@ -33,7 +33,13 @@ from mrcnn.config import Config
 from os.path import isfile, join
 import time
 import folium
+import googlemaps
+from datetime import datetime
+import polyline
+gmaps = googlemaps.Client(key='AIzaSyCciJlgQzOFXZXhvM1ORscu0Cj5dj-lTRo')
 
+# Request directions via public transit
+now = datetime.now()
 '''
                 '50.0753397,14.4189888 ;'
                 '50.0795436,14.3907308 ;'
@@ -113,13 +119,16 @@ def display_instances(image, boxes, masks, ids, names, scores,resultsg):
         xx = (x1 + x2) / 2
         yy=  (y1 + y2) / 2
 
-        #print(resultsg.metadata[i]['location'])
-        for i in range(1,5):
-            #print(i)
-            #print(float(resultsg.metadata[1]['location']['lat']))
-            #print(i)
-            #print(resultsg.metadata[i]['location']['lat'])
-            #print(caption)
+
+
+        print(resultsg.metadata[i]['location'])
+        a = len(resultsg.metadata)
+        for i in range(1,a):
+            # print(i)
+            # print(float(resultsg.metadata[1]['location']['lat']))
+            # print(i)
+            # print(resultsg.metadata[i]['location']['lat'])
+            # print(caption)
             if "person" in caption:
                 folium.Marker(
                     location=[float(resultsg.metadata[i]['location']['lat'])+ 0.0000005 * int(xx), float(resultsg.metadata[i]['location']['lng']) + 0.0000005 * int(yy)],
@@ -147,9 +156,9 @@ def display_instances(image, boxes, masks, ids, names, scores,resultsg):
                     icon=folium.Icon(color= 'green')
                 ).add_to(map)
 
-        # image = cv2.putText(
-        #     image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
-        # )
+        image = cv2.putText(
+            image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX, 0.7, color, 2
+        )
 
     return image
 
@@ -249,28 +258,41 @@ def test_simple(params):
         'teddy bear', 'hair drier', 'toothbrush'
     ]
 
-    api = overpy.Overpass()
+    now = datetime.now()
+    directions_result = gmaps.directions("Dejvice, Prague 6",
+                                         "Charles Square, Nové Město, Praha",
+                                         mode="transit",
+                                         departure_time=now)
 
-    # fetch all ways and nodes
-    result = api.query("""way
-["name"="Běžecká"]
-(50.07,14.0,50.8,14.4);
-/*added by auto repair*/
-(._;>;);
-/*end of auto repair*/
-out;
-                        """)
+    # api = overpy.Overpass()
+    #
+    # # fetch all ways and nodes
+    # result = api.query("""way
+    #                     ["name"="Běžecká"]
+    #                     (50.07,14.0,50.8,14.4);
+    #                     /*added by auto repair*/
+    #                     (._;>;);
+    #                     /*end of auto repair*/
+    #                     out;
+    #                                             """)
     location1 = []
     location = ''
+
+    abc = polyline.decode(directions_result[0]['overview_polyline']['points'])
+    for i in range(0, len(abc)):
+        location1 = str(abc[i])
+        location += location1.strip(')(') + '; '
+
+
     #result = api.query("node(50.077167,14.419660,50.077668,14.429223);out;")
-    print(len(result.nodes))
-    for node in result.nodes:
-        #print("    Lat: %f, Lon: %f" % (node.lat, node.lon))
-        lat = str(node.lat)
-        lon = str(node.lon)
-        location1 = lat + ',' + lon + '; '
-        location += location1
-    print(location)
+    # print(len(result.nodes))
+    # for node in result.nodes:
+    #     #print("    Lat: %f, Lon: %f" % (node.lat, node.lon))
+    #     lat = str(node.lat)
+    #     lon = str(node.lon)
+    #     location1 = lat + ',' + lon + '; '
+    #     location += location1
+    # print(location)
     # location1 = []
     # location = ''
     # for i in range(0, 5):
@@ -284,7 +306,7 @@ out;
     apiargs = {
         'location': location ,#'50.0753397,14.4189888 ; 50.0795436,14.3907308 ;50.10291748018805, 14.39132777985096',
         'size': '640x640',
-        'heading': '0;45;90;135;180;225;270',
+        'heading': '90',
         'fov': '90',
         'key': 'AIzaSyCciJlgQzOFXZXhvM1ORscu0Cj5dj-lTRo',
         'pitch': '0'
