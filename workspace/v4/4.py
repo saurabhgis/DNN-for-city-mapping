@@ -37,8 +37,18 @@ from folium.plugins import HeatMap
 import googlemaps
 from datetime import datetime
 import polyline
-gmaps = googlemaps.Client(key='AIzaSyCciJlgQzOFXZXhvM1ORscu0Cj5dj-lTRo')
+from math import sqrt
 
+gmaps = googlemaps.Client(key='AIzaSyCciJlgQzOFXZXhvM1ORscu0Cj5dj-lTRo')
+maxdis = 0.0002
+def euclid(s1,s2):
+	square = pow((s1[0] - s2[0]),2) + pow((s1[1]-s2[1]),2)
+	return sqrt(square)
+
+locdict ={'person': [],
+          'car': [],
+          'bus': [],
+          'truck': []}
 # Request directions via public transit
 now = datetime.now()
 '''
@@ -108,6 +118,7 @@ def display_instances(image, boxes, masks, ids, names, scores,resultsg):
         #cv2.imwrite(DET_PATH + str(n) + '.jpeg', frame)
         #cv2.imwrite('mask',mask[:,:,i])
         depth = abs(np.log(np.mean(mask)))
+        #print(depth)
         #print(mask.shape)
         #image = apply_mask(image, mask, color)
         depcap = '{} {}'.format('depth', int(depth))
@@ -121,54 +132,54 @@ def display_instances(image, boxes, masks, ids, names, scores,resultsg):
         xx = (x1 + x2) / 2
         yy = (y1 + y2) / 2
 
-        #print(resultsg.metadata[i]['location'])
         a = len(resultsg.metadata)
         #print(a)
         for j in range(0,a-1):
-            # print(i)
-            # print(float(resultsg.metadata[1]['location']['lat']))
-            # print(i)
-            # print(resultsg.metadata[i]['location']['lat'])
-            # print(caption)
-            #print(j)
             try:
 
-                loc = [float(resultsg.metadata[j]['location']['lat']) + 0.0005 * int(xx),float(resultsg.metadata[j]['location']['lng']) + 0.0000005 * int(yy)]
-
-                #if resultsg.metadata[j]['location']:
+                loc = [
+                    (float(resultsg.metadata[j]['location']['lat']) ,float(resultsg.metadata[j]['location']['lng'] + (0.0001 * depth))),
+                    (float(resultsg.metadata[j]['location']['lat'] + (0.0001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng'])),
+                    (float(resultsg.metadata[j]['location']['lat']),float(resultsg.metadata[j]['location']['lng'] - (0.0001 * depth))),
+                    (float(resultsg.metadata[j]['location']['lat'] - (0.0001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng']))
+                ]
                 if "person" in caption:
-                    folium.Marker(
-                        location= loc,
-                        popup=caption,
-                        icon=folium.Icon(color= 'white')
-                    ).add_to(map)
+                    locdict['person'].append(loc)
 
+                    # for l in loc:
+                    #     folium.Marker(
+                    #         location= l,
+                    #         popup=caption,
+                    #         icon=folium.Icon(color= 'white')
+                    #     ).add_to(map)
 
                 if "car" in caption:
-                    folium.Marker(
-                        location=loc,
-                        popup=caption,
-                        icon=folium.Icon(color= 'red')
-                    ).add_to(map)
+                    for l in loc:
+                        folium.Marker(
+                            location=l,
+                            popup=caption,
+                            icon=folium.Icon(color= 'red')
+                        ).add_to(map)
 
                 if "bus" in caption:
-                    folium.Marker(
-                        location=loc,
-                        popup=caption,
-                        icon=folium.Icon(color='blue')
-                    ).add_to(map)
+                    for l in loc:
+                        folium.Marker(
+                            location=l,
+                            popup=caption,
+                            icon=folium.Icon(color='blue')
+                        ).add_to(map)
 
                 if "truck" in caption:
-                    folium.Marker(
-                        location=loc,
-                        popup=caption,
-                        icon=folium.Icon(color= 'green')
-                    ).add_to(map)
+                    for l in loc:
+                        folium.Marker(
+                            location=l,
+                            popup=caption,
+                            icon=folium.Icon(color= 'green')
+                        ).add_to(map)
 
             except KeyError:
                 print("something is wrong at ", j )
-            # hmap.add_child(hm_wide)
-            # hmap.save('heatmap.html')
+
 
     return image
 
@@ -269,47 +280,26 @@ def test_simple(params):
     ]
 
     now = datetime.now()
-    directions_result = gmaps.directions("Dejvice, Prague 6",
-                                         "Charles Square, Nové Město, Praha",
-                                         mode="transit",
+    directions_result = gmaps.directions("Karlovo nám. 287/18, 120 00 Nové Město",
+                                         "Karlovo nám. 319/3, 120 00 Nové Město",
+                                         mode="driving",
                                          departure_time=now)
 
-    # api = overpy.Overpass()
-    #
-    # # fetch all ways and nodes
-    # result = api.query("""way
-    #                     ["name"="Běžecká"]
-    #                     (50.07,14.0,50.8,14.4);
-    #                     /*added by auto repair*/
-    #                     (._;>;);
-    #                     /*end of auto repair*/
-    #                     out;
-    #                                             """)
     location1 = []
     location = ''
-
     abc = polyline.decode(directions_result[0]['overview_polyline']['points'])
-    for i in range(0, len(abc)):
+
+    for i in range(0, len(abc) - 1):
+        dis = euclid(abc[i], abc[i + 1])
+        if dis > maxdis:
+            sam = dis / maxdis
+            lat = np.linspace(abc[i][0], abc[i + 1][0], sam)
+            lng = np.linspace(abc[i][1], abc[i + 1][1], sam)
+            for k in range(1, len(lat) - 1):
+                location += str(lat[k]) + ',' + str((lng[k])) + ';'
         location1 = str(abc[i])
         location += location1.strip(')(') + '; '
 
-
-    #result = api.query("node(50.077167,14.419660,50.077668,14.429223);out;")
-    # print(len(result.nodes))
-    # for node in result.nodes:
-    #     #print("    Lat: %f, Lon: %f" % (node.lat, node.lon))
-    #     lat = str(node.lat)
-    #     lon = str(node.lon)
-    #     location1 = lat + ',' + lon + '; '
-    #     location += location1
-    # print(location)
-    # location1 = []
-    # location = ''
-    # for i in range(0, 5):
-    #     lat = str((50.0753397 - i * 0.0001))
-    #     lon = str(14.4189888)
-    #     location1 = lat + ',' + lon + '; '
-    #     location += location1
 
     apiargs = {
         'location': location ,#'50.0753397,14.4189888 ; 50.0795436,14.3907308 ;50.10291748018805, 14.39132777985096',
@@ -381,7 +371,7 @@ def test_simple(params):
 
         cv2.destroyAllWindows()
         break
-
+    print(locdict['person'])
     map.save(outfile='map.html')
 
 def main(_):
