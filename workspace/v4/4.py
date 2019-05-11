@@ -38,6 +38,7 @@ import googlemaps
 from datetime import datetime
 import polyline
 from math import sqrt
+from sklearn.cluster import KMeans
 
 gmaps = googlemaps.Client(key='AIzaSyCciJlgQzOFXZXhvM1ORscu0Cj5dj-lTRo')
 maxdis = 0.0002
@@ -138,48 +139,25 @@ def display_instances(image, boxes, masks, ids, names, scores,resultsg):
             try:
 
                 loc = [
-                    (float(resultsg.metadata[j]['location']['lat']) ,float(resultsg.metadata[j]['location']['lng'] + (0.0001 * depth))),
-                    (float(resultsg.metadata[j]['location']['lat'] + (0.0001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng'])),
-                    (float(resultsg.metadata[j]['location']['lat']),float(resultsg.metadata[j]['location']['lng'] - (0.0001 * depth))),
-                    (float(resultsg.metadata[j]['location']['lat'] - (0.0001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng']))
+                    (float(resultsg.metadata[j]['location']['lat']) ,float(resultsg.metadata[j]['location']['lng'] + (0.00001 * depth))),
+                    (float(resultsg.metadata[j]['location']['lat'] + (0.00001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng'])),
+                    (float(resultsg.metadata[j]['location']['lat']),float(resultsg.metadata[j]['location']['lng'] - (0.00001 * depth))),
+                    (float(resultsg.metadata[j]['location']['lat'] - (0.00001 * int(depth))) ,float(resultsg.metadata[j]['location']['lng']))
                 ]
                 if "person" in caption:
-                    locdict['person'].append(loc)
-
-                    # for l in loc:
-                    #     folium.Marker(
-                    #         location= l,
-                    #         popup=caption,
-                    #         icon=folium.Icon(color= 'white')
-                    #     ).add_to(map)
+                    locdict['person'].extend(loc)
 
                 if "car" in caption:
-                    for l in loc:
-                        folium.Marker(
-                            location=l,
-                            popup=caption,
-                            icon=folium.Icon(color= 'red')
-                        ).add_to(map)
+                    locdict['car'].extend(loc)
 
                 if "bus" in caption:
-                    for l in loc:
-                        folium.Marker(
-                            location=l,
-                            popup=caption,
-                            icon=folium.Icon(color='blue')
-                        ).add_to(map)
+                    locdict['bus'].extend(loc)
 
                 if "truck" in caption:
-                    for l in loc:
-                        folium.Marker(
-                            location=l,
-                            popup=caption,
-                            icon=folium.Icon(color= 'green')
-                        ).add_to(map)
+                    locdict['truck'].extend(loc)
 
             except KeyError:
                 print("something is wrong at ", j )
-
 
     return image
 
@@ -371,7 +349,17 @@ def test_simple(params):
 
         cv2.destroyAllWindows()
         break
-    print(locdict['person'])
+
+    for key ,val in locdict.items():
+        # print(locdict[key])
+        kmeans = KMeans(n_clusters=int(len(val)/20)).fit(locdict[key])
+        kmeans.predict(locdict[key])
+        for center in kmeans.cluster_centers_:
+            folium.Marker(
+                location=center,
+                popup=key,
+                icon=folium.Icon(color='white')
+            ).add_to(map)
     map.save(outfile='map.html')
 
 def main(_):
